@@ -1,0 +1,36 @@
+name: Lilarcor
+version: ${project.version}
+main: pl.gduraj.lilarcor.Lilarcor
+api-version: 1.16
+authors: [ gduraj ]
+description: Pradawne brodate narzędzia
+website: htttp://gduraj.pl
+commands:
+  lilarcor:
+    description: "Informacje na temat pluginu"
+    usage: /<command>
+  powiadomienia:
+    description: "Panel powiadomień"
+    usage: /<command>
+permissions:
+  lilarcor.*:
+    default: op
+    children:
+      lilarcor.admin: true
+      lilarcor.check: true
+      lilarcor.reload: true
+      lilarcor.log: true
+      lilarcor.set: true
+      lilarcor.sword: true
+  lilarcor.admin:
+    default: false
+  lilarcor.check:
+    default: false
+  lilarcor.reload:
+    default: false
+  lilarcor.log:
+    default: false
+  lilarcor.set:
+    default: false
+  lilarcor.sword:
+    default: false

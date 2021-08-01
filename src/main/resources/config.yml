@@ -1,0 +1,35 @@
+Message:
+  noPermission: "&e&lLilarcor &f» Nie masz dostępu do tej komendy" # BRAK DOSTEPU DO KOMENDY
+  noPermissionArg: "&e&lLilarcor &f» Nie masz dostępu do tej komendy, potrzebujesz permisji: &c%permisja%" # BRAK DOSTEPU DO PODKOMENDY
+  reloadConfig: "&e&lLilarcor &f» &fPlik &a%plik% &fzostał przeładowany"
+  reloadAll: "&e&lLilarcor &f» &fWtyczka została przeładowana"
+  dropItem: "&cTwój miecz został wyrzucony na ziemie, ponieważ masz pełny ekwipunek" #DROPNIECIE MIECZA NA ZIEMIE W PRZYPADKU BRAKU MIEJSCA W EQ
+  addItem: "&aMiecz został dodany do ekwipunku."
+  noItem: "&cNie masz żadnego itemu w ekwipunku"
+  setValueLilarcor: "&fUstawiono liczbe zabójstw miecza na &a: %kills%"
+  killValueLilarcor: "&fLiczba punktów tego narzędzia wynosi: &a%kills%"
+  offlinePlayer: "&cGracz jest offline"
+  onlyPlayer: "&eTą komende może wykonać tylko gracz"
+  up1to2: '&6&lHmm… miecz stał się niezniszczalny. A może by tak przetestować go na innych potworach?'
+  commandHelp:
+    - "&7&m-------------&8[ &eLilarcor &8]&7&m-------------"
+    - ""
+    - "&6&l » &e/lilarcor get <level> <player> &7- &fNadaje graczu miecz danego poziomu."
+    - "&6&l » &e/lilarcor setValue <number> &7- &fUstawienie statystki miecza"
+    - "&6&l » &e/lilarcor check &7- &fPokazuję ile zabójstw ma miecz."
+    - "&6&l » &e/lilarcor log <player> &7- &fInformacja za gracz zakupil miecz."
+    - "&6&l » &e/lilarcor reload [<tool>]&7- &fPrzeładowanie pluginu lub poszczególnego narzędzia."
+GUI:
+  name: "&6Powiadomienia"
+  axe:
+    name: AXE
+    lore:
+      - Siemka
+  sword:
+    name: AXE
+    lore:
+      - Siemka
+  pickaxe:
+    name: AXE
+    lore:
+      - Siemka
