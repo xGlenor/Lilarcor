@@ -1,6 +1,5 @@
-package pl.gduraj.lilarcor.liteners;
+package pl.gduraj.lilarcor.listeners;
 
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import org.bukkit.entity.Player;

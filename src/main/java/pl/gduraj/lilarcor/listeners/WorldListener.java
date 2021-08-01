@@ -1,6 +1,5 @@
-package pl.gduraj.lilarcor.liteners;
+package pl.gduraj.lilarcor.listeners;
 
-import org.bukkit.block.Block;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

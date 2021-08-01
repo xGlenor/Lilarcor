@@ -2,19 +2,17 @@ package pl.gduraj.lilarcor;
 
 import com.samjakob.spigui.SpiGUI;
 import org.bukkit.plugin.java.JavaPlugin;
-import pl.gduraj.lilarcor.liteners.EntityListener;
-import pl.gduraj.lilarcor.liteners.PlayerListener;
-import pl.gduraj.lilarcor.liteners.WorldListener;
+import pl.gduraj.lilarcor.listeners.EntityListener;
+import pl.gduraj.lilarcor.listeners.PlayerListener;
+import pl.gduraj.lilarcor.listeners.WorldListener;
 import pl.gduraj.lilarcor.managers.CommandManager;
 import pl.gduraj.lilarcor.managers.ConfigManager;
 import pl.gduraj.lilarcor.managers.PlayerCommandManager;
 import pl.gduraj.lilarcor.managers.ToolsManager;
 
-import java.util.HashMap;
-
 public final class Lilarcor extends JavaPlugin {
 
-    public static Lilarcor instance;
+    private static Lilarcor instance;
 
     //private HashMap<String, String> playersData;
     private SpiGUI spiGUI;

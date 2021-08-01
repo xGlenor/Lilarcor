@@ -1,6 +1,5 @@
-package pl.gduraj.lilarcor.liteners;
+package pl.gduraj.lilarcor.listeners;
 
-import com.google.common.collect.Table;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,8 +7,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.inventory.ItemStack;
 import pl.gduraj.lilarcor.Lilarcor;
 import pl.gduraj.lilarcor.config.ConfigType;
@@ -19,7 +16,6 @@ import pl.gduraj.lilarcor.utils.TextUtil;
 import pl.gduraj.lilarcor.utils.Util;
 import pl.gduraj.lilarcor.utils.XSound;
 
-import java.util.HashMap;
 import java.util.Random;
 
 public class PlayerListener implements Listener {
