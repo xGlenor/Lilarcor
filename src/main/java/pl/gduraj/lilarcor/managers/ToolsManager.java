@@ -1,7 +1,9 @@
 package pl.gduraj.lilarcor.managers;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
 import pl.gduraj.lilarcor.Lilarcor;
+import pl.gduraj.lilarcor.config.ConfigHandler;
 import pl.gduraj.lilarcor.config.ConfigType;
 import pl.gduraj.lilarcor.tools.Axe;
 import pl.gduraj.lilarcor.tools.Pickaxe;
@@ -10,6 +12,7 @@ import pl.gduraj.lilarcor.tools.Tool;
 import pl.gduraj.lilarcor.utils.NBTUtil;
 
 import java.util.HashMap;
+import java.util.List;
 
 
 public class ToolsManager {
@@ -21,12 +24,22 @@ public class ToolsManager {
         this.plugin = Lilarcor.getInstance();
         this.tools = new HashMap<>();
         loadTools();
+        loadCustomMaterials();
     }
 
-    public void loadTools() {
+    private void loadTools() {
         tools.put("AXE", new Axe());
         tools.put("PICKAXE", new Pickaxe());
         tools.put("SWORD" , new Sword());
+    }
+
+    private void loadCustomMaterials(){
+        FileConfiguration config = this.plugin.getConfigManager().getFile(ConfigType.SETTINGS).getConfig();
+        HashMap<String, List<String>> cmats = this.plugin.getCustomMaterials();
+
+        cmats.put("AXE", config.getStringList("CustomList.AXE"));
+        cmats.put("PICKAXE", config.getStringList("CustomList.PICKAXE"));
+
     }
 
     public void reloadTools(){

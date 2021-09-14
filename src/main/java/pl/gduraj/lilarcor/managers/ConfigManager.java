@@ -37,6 +37,7 @@ public class ConfigManager {
         logsFile = new File(plugin.getDataFolder(), "/logs.txt");
         setupLogs();
 
+
         Message.setConfiguration(getFile(ConfigType.SETTINGS).getConfig());
         configurations.values().forEach(ConfigHandler::saveDefaultConfig);
 

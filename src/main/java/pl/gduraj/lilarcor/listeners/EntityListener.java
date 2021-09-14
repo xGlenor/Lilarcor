@@ -1,7 +1,10 @@
 package pl.gduraj.lilarcor.listeners;
 
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import org.bukkit.entity.Animals;
+import org.bukkit.entity.Monster;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -43,6 +46,7 @@ public class EntityListener implements Listener {
                         NBTUtil.getIntNBT(item, type.toUpperCase())){
 
                     player.getInventory().setItemInMainHand(getToolsManager().getTools().get(type).addValue(item, 1)); // addValue
+                    player.sendMessage(Message.GOOD_INFO.toString());
                     item = player.getInventory().getItemInMainHand();
                     // LEVEL UP
                     if(NBTUtil.getIntNBT(item, "Wartosc") >= getToolsManager().getTools().get(type).getQuests().get(entity).getInt("value")){
@@ -50,7 +54,11 @@ public class EntityListener implements Listener {
 
                         if(NBTUtil.getIntNBT(item, type.toUpperCase()).equals(1)){ // IF LEVEL FROM TOOL 1 TO TOOL 2
                             player.sendMessage(Message.LEVEL_UP.toString());
+                            return;
                         }
+
+
+
                     }
 
                 }
@@ -72,7 +80,6 @@ public class EntityListener implements Listener {
             if(type.equals("PICKAXE") && !getToolsManager().getTools().get(type).getEventStatus()) return;
 
             if(player.getInventory().getItemInMainHand().getType().isAir()) return;
-            System.out.println("SIEMA");
             if(!this.plugin.getToolsManager().checkTool(player.getInventory().getItemInMainHand())) return;
 
 
@@ -83,8 +90,13 @@ public class EntityListener implements Listener {
             if(Util.chance(chance/100)) {
                 if(!getToolsManager().getTypeEvent(player.getInventory().getItemInMainHand()).equals("KILL")) return;
                 if (getConfig(ConfigType.valueOf(type.toUpperCase())).getConfigurationSection("onEvent").contains(entity)) {
-
                     List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent." + entity + "." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
+                    player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
+                }else if(event.getEntity() instanceof Animals){
+                    List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.OTHER_PASSIVE." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
+                    player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
+                }else if(event.getEntity() instanceof Monster){
+                    List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.OTHER_AGRESSIVE." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
                     player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
                 }
             }

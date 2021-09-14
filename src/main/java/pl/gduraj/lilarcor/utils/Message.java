@@ -16,6 +16,7 @@ public enum Message {
     OFFLINE_PLAYER("offlinePlayer"),
     ONLY_PLAYER("onlyPlayer"),
     LEVEL_UP("up1to2"),
+    GOOD_INFO("goodInfo"),
 
     TEST("");
 

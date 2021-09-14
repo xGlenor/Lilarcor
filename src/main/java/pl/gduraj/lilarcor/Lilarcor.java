@@ -7,19 +7,21 @@ import pl.gduraj.lilarcor.listeners.PlayerListener;
 import pl.gduraj.lilarcor.listeners.WorldListener;
 import pl.gduraj.lilarcor.managers.CommandManager;
 import pl.gduraj.lilarcor.managers.ConfigManager;
-import pl.gduraj.lilarcor.managers.PlayerCommandManager;
 import pl.gduraj.lilarcor.managers.ToolsManager;
+
+import java.util.HashMap;
+import java.util.List;
 
 public final class Lilarcor extends JavaPlugin {
 
     private static Lilarcor instance;
 
     //private HashMap<String, String> playersData;
+    private HashMap<String, List<String>> customMaterials;
     private SpiGUI spiGUI;
     private CommandManager commandManager;
     private ConfigManager configManager;
     private ToolsManager toolsManager;
-    private PlayerCommandManager playerCommandManager;
 
 
 
@@ -36,7 +38,6 @@ public final class Lilarcor extends JavaPlugin {
         configManager.loadFiles(this);
 
         commandManager = new CommandManager();
-        playerCommandManager = new PlayerCommandManager();
         toolsManager = new ToolsManager();
 
         getServer().getPluginManager().registerEvents(new EntityListener(), this);
@@ -54,6 +55,10 @@ public final class Lilarcor extends JavaPlugin {
 
     public CommandManager getCommandManager() {
         return commandManager;
+    }
+
+    public HashMap<String, List<String>> getCustomMaterials() {
+        return customMaterials;
     }
 
     public ConfigManager getConfigManager() {

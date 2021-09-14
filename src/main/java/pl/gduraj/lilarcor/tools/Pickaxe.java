@@ -1,10 +1,9 @@
 package pl.gduraj.lilarcor.tools;
 
-import org.bukkit.ChatColor;
+
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
-import pl.gduraj.lilarcor.Lilarcor;
 import pl.gduraj.lilarcor.config.ConfigType;
 import pl.gduraj.lilarcor.utils.ItemBuilder;
 import pl.gduraj.lilarcor.utils.NBTUtil;
@@ -19,7 +18,6 @@ public class Pickaxe extends Tool{
 
     public Pickaxe() {
         super("PICKAXE");
-        this.plugin = Lilarcor.getInstance();
         this.quests = new HashMap<>();
         this.config = plugin.getConfigManager().getFile(ConfigType.PICKAXE).getConfig();
         loadQuests();

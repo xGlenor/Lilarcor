@@ -11,10 +11,11 @@ Message:
   offlinePlayer: "&cGracz jest offline"
   onlyPlayer: "&eTą komende może wykonać tylko gracz"
   up1to2: '&6&lHmm… miecz stał się niezniszczalny. A może by tak przetestować go na innych potworach?'
+  goodInfo: "&aMoc się wokół ciebie zbiera..."
   commandHelp:
     - "&7&m-------------&8[ &eLilarcor &8]&7&m-------------"
     - ""
-    - "&6&l » &e/lilarcor get <level> <player> &7- &fNadaje graczu miecz danego poziomu."
+    - "&6&l » &e/lilarcor get <player> <tool> <level> &7- &fNadaje graczu narzędzie danego poziomu."
     - "&6&l » &e/lilarcor setValue <number> &7- &fUstawienie statystki miecza"
     - "&6&l » &e/lilarcor check &7- &fPokazuję ile zabójstw ma miecz."
     - "&6&l » &e/lilarcor log <player> &7- &fInformacja za gracz zakupil miecz."
@@ -33,3 +34,88 @@ GUI:
     name: AXE
     lore:
       - Siemka
+
+CustomList:
+  AXE:
+    - OAK_PLANKS
+    - SPRUCE_PLANKS
+    - BIRCH_PLANKS
+    - JUNGLE_PLANKS
+    - ACACIA_PLANKS
+    - DARK_OAK_PLANKS
+    - OAK_LOG
+    - SPRUCE_LOG
+    - BIRCH_LOG
+    - JUNGLE_LOG
+    - ACACIA_LOG
+    - DARK_OAK_LOG
+    - STRIPPED_OAK_LOG
+    - STRIPPED_SPRUCE_LOG
+    - STRIPPED_BIRCH_LOG
+    - STRIPPED_JUNGLE_LOG
+    - STRIPPED_ACACIA_LOG
+    - STRIPPED_DARK_OAK_LOG
+    - STRIPPED_OAK_WOOD
+    - STRIPPED_SPRUCE_WOOD
+    - STRIPPED_BIRCH_WOOD
+    - STRIPPED_JUNGLE_WOOD
+    - STRIPPED_ACACIA_WOOD
+    - STRIPPED_DARK_OAK_WOOD
+    - OAK_LEAVES
+    - SPRUCE_LEAVES
+    - BIRCH_LEAVES
+    - JUNGLE_LEAVES
+    - ACACIA_LEAVES
+    - DARK_OAK_LEAVES
+    - DEAD_BUSH
+  PICKAXE:
+    - STONE
+    - GRANITE
+    - POLISHED_GRANITE
+    - DIORITE
+    - POLISHED_DIORITE
+    - ANDESITE
+    - POLISHED_ANDESITE
+    - COBBLESTONE
+    - GOLD_ORE
+    - IRON_ORE
+    - COAL_ORE
+    - LAPIS_ORE
+    - LAPIS_BLOCK
+    - SANDSTONE
+    - CHISELED_SANDSTONE
+    - CUT_SANDSTONE
+    - GOLD_BLOCK
+    - IRON_BLOCK
+    - SMOOTH_QUARTZ
+    - SMOOTH_RED_SANDSTONE
+    - SMOOTH_SANDSTONE
+    - SMOOTH_STONE
+    - MOSSY_COBBLESTONE
+    - OBSIDIAN
+    - PURPUR_BLOCK
+    - DIAMOND_ORE
+    - DIAMOND_BLOCK
+    - REDSTONE_ORE
+    - GLOWSTONE
+    - STONE_BRICKS
+    - MOSSY_STONE_BRICKS
+    - CRACKED_STONE_BRICKS
+    - CHISELED_STONE_BRICKS
+    - END_STONE
+    - END_STONE_BRICKS
+    - EMERALD_ORE
+    - EMERALD_BLOCK
+    - REDSTONE_BLOCK
+    - NETHER_QUARTZ_ORE
+    - CHISELED_QUARTZ_BLOCK
+    - QUARTZ_BLOCK
+    - QUARTZ_PILLAR
+    - COAL_BLOCK
+    - PRISMARINE
+    - PRISMARINE_BRICKS
+    - DARK_PRISMARINE
+    - RED_SANDSTONE
+    - CHISELED_RED_SANDSTONE
+    - CUT_RED_SANDSTONE
+    - RED_NETHER_BRICKS

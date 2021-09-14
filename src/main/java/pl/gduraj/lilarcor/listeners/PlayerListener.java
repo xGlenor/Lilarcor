@@ -45,7 +45,7 @@ public class PlayerListener implements Listener {
     public void onClick(PlayerInteractEvent event){
         if(event.getPlayer().getInventory().getItemInMainHand().getType().isAir()) return;
         if(!this.plugin.getToolsManager().checkTool(event.getPlayer().getInventory().getItemInMainHand())) return;
-        if(NBTUtil.getIntNBT(event.getItem(), getToolsManager().getNameTool(event.getItem())).equals(1)) return;
+        if(NBTUtil.getIntNBT(event.getPlayer().getInventory().getItemInMainHand(), getToolsManager().getNameTool(event.getPlayer().getInventory().getItemInMainHand())).equals(1)) return;
 
 
         Player player = event.getPlayer();

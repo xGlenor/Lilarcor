@@ -4,15 +4,21 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import pl.gduraj.lilarcor.Lilarcor;
+import pl.gduraj.lilarcor.config.ConfigType;
 import pl.gduraj.lilarcor.utils.Message;
 import pl.gduraj.lilarcor.utils.NBTUtil;
 import pl.gduraj.lilarcor.utils.TextUtil;
 
-public class CommandManager implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class CommandManager implements CommandExecutor, TabExecutor {
 
     private Lilarcor plugin;
     private FileConfiguration config;
@@ -20,6 +26,8 @@ public class CommandManager implements CommandExecutor {
     public CommandManager(){
         this.plugin = Lilarcor.getInstance();
         this.plugin.getCommand("lilarcor").setExecutor(this);
+        this.plugin.getCommand("lilarcor").setTabCompleter(this);
+        this.config = plugin.getConfigManager().getFile(ConfigType.SETTINGS).getConfig();
     }
 
     @Override
@@ -79,7 +87,7 @@ public class CommandManager implements CommandExecutor {
                     sender.sendMessage(Message.OFFLINE_PLAYER.toString());
                     return true;
                 }
-                player.getInventory().addItem(this.plugin.getToolsManager().getTools().get(args[2]).getItem(Integer.parseInt(args[3])));
+                player.getInventory().addItem(this.plugin.getToolsManager().getTools().get(args[2].toUpperCase()).getItem(Integer.parseInt(args[3])));
                 return true;
             }
 
@@ -106,5 +114,27 @@ public class CommandManager implements CommandExecutor {
         }
 
         return false;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        if(args.length == 1){
+            return Arrays.asList("get", "setValue", "check", "log", "reload");
+        }else if(args.length == 2){
+            if(args[0].equalsIgnoreCase("get")){
+                List<String> list = new ArrayList<>();
+                this.plugin.getServer().getOnlinePlayers().forEach(p -> list.add(p.getName()));
+                return list;
+            }else if(args[0].equalsIgnoreCase("reload")){
+                return Arrays.asList("SWORD", "AXE", "PICKAXE");
+            }
+        }else if(args.length == 3){
+            if(args[0].equalsIgnoreCase("get")){
+                return Arrays.asList("SWORD", "AXE", "PICKAXE");
+            }
+        }
+
+
+        return null;
     }
 }
