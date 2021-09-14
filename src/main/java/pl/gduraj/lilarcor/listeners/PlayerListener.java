@@ -45,12 +45,22 @@ public class PlayerListener implements Listener {
     public void onClick(PlayerInteractEvent event){
         if(event.getPlayer().getInventory().getItemInMainHand().getType().isAir()) return;
         if(!this.plugin.getToolsManager().checkTool(event.getPlayer().getInventory().getItemInMainHand())) return;
-        if(NBTUtil.getIntNBT(event.getPlayer().getInventory().getItemInMainHand(), getToolsManager().getNameTool(event.getPlayer().getInventory().getItemInMainHand())).equals(1)) return;
 
+        if(NBTUtil.getNBT(event.getPlayer().getInventory().getItemInMainHand(), "Lilarcor")){
+            ItemStack item = event.getPlayer().getInventory().getItemInMainHand();
+            item = NBTUtil.addNBT(item, "SWORD", NBTUtil.getIntNBT(item, "Lilarcor"));
+            item = NBTUtil.addNBT(item, "Wartosc", NBTUtil.getIntNBT(item, "kills"));
+            event.getPlayer().getInventory().setItemInMainHand(item);
+            return;
+        }
+
+
+        if(NBTUtil.getIntNBT(event.getPlayer().getInventory().getItemInMainHand(), getToolsManager().getNameTool(event.getPlayer().getInventory().getItemInMainHand())).equals(1)) return;
 
         Player player = event.getPlayer();
         ItemStack item = player.getInventory().getItemInMainHand();
         String type = getToolsManager().getNameTool(item).toUpperCase();
+
 
         if(type.equals("SWORD") && !getToolsManager().getTools().get(type).getClickStatus()) return;
         if(type.equals("AXE") && !getToolsManager().getTools().get(type).getClickStatus()) return;
@@ -64,12 +74,8 @@ public class PlayerListener implements Listener {
                 String random = getConfig(type).getStringList("onClick."+level+".message").get(new Random().nextInt(getConfig(type).getStringList("onClick."+level+".message").size()));
                 player.sendMessage(TextUtil.color(random));
                 player.playSound(player.getLocation(), XSound.matchXSound(getConfig(type).getString("onClick."+level+".sound")).get().parseSound(), 10, 1);
-
             }
-
         }
-
-
     }
 
 //    @EventHandler

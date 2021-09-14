@@ -32,6 +32,7 @@ public final class Lilarcor extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        customMaterials = new HashMap<>();
         spiGUI = new SpiGUI(this);
         //this.playersData = new HashMap<>();
         configManager = new ConfigManager();

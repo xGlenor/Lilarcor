@@ -57,8 +57,6 @@ public class EntityListener implements Listener {
                             return;
                         }
 
-
-
                     }
 
                 }
@@ -88,15 +86,17 @@ public class EntityListener implements Listener {
             double chance = getToolsManager().getTools().get(type).getClickChance();
 
             if(Util.chance(chance/100)) {
-                if(!getToolsManager().getTypeEvent(player.getInventory().getItemInMainHand()).equals("KILL")) return;
                 if (getConfig(ConfigType.valueOf(type.toUpperCase())).getConfigurationSection("onEvent").contains(entity)) {
                     List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent." + entity + "." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
                     player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
+                    System.out.println("0 " + messageList);
                 }else if(event.getEntity() instanceof Animals){
                     List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.OTHER_PASSIVE." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
                     player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
+                    System.out.println("1 " + messageList);
                 }else if(event.getEntity() instanceof Monster){
                     List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.OTHER_AGRESSIVE." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
+                    System.out.println("2 " + messageList);
                     player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
                 }
             }

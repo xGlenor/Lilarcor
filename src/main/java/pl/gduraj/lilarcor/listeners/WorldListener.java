@@ -83,16 +83,17 @@ public class WorldListener implements Listener {
         if(NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), getToolsManager().getNameTool(player.getInventory().getItemInMainHand())).equals(1)) return;
 
         if(Util.chance(chance/100)) {
-            if(!getToolsManager().getTypeEvent(player.getInventory().getItemInMainHand()).equals("BREAK")) return;
             if (getConfig(ConfigType.valueOf(type.toUpperCase())).getConfigurationSection("onEvent").contains(block)) {
                 List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent." + block + "." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
                 player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
-            }else if (this.plugin.getCustomMaterials().get(type.toUpperCase()).contains(block)){
-                List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.Custom1." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
-                player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
-            }else{
-                List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.Custom2." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
-                player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
+            }else if(type.equals("AXE") || type.equals("PICKAXE")) {
+                if (this.plugin.getCustomMaterials().get(type.toUpperCase()).contains(block)){
+                    List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.CUSTOM1." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
+                    player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
+                }else{
+                    List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.CUSTOM2." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
+                    player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
+                }
             }
         }
 

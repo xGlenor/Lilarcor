@@ -49,6 +49,8 @@ public class ToolsManager {
     public boolean checkTool(ItemStack item){
         if(NBTUtil.getNBT(item, "AXE"))
             return true;
+        else if (NBTUtil.getNBT(item, "Lilarcor"))
+            return true;
         else if(NBTUtil.getNBT(item, "SWORD"))
             return true;
         else return NBTUtil.getNBT(item, "PICKAXE");

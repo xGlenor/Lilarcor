@@ -70,7 +70,6 @@ public class CommandManager implements CommandExecutor, TabExecutor {
                     Player player = (Player) sender;
                     if(!player.getInventory().getItemInMainHand().getType().isAir()){
                         player.sendMessage(Message.KILL_VALUE.toString().replace("%kills%", NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), "Wartosc").toString()));
-                        return true;
                     }else {
                         player.sendMessage(Message.NO_ITEM.toString());
                         return true;
