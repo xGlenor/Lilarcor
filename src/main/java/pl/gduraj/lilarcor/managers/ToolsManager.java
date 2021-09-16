@@ -43,7 +43,7 @@ public class ToolsManager {
     }
 
     public void reloadTools(){
-        tools.forEach((k, v) -> v.reloadTool());
+        tools.forEach((s, tool) -> tool.reloadTool());
     }
 
     public boolean checkTool(ItemStack item){

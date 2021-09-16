@@ -41,9 +41,9 @@ public class Axe extends Tool{
     @Override
     public ItemStack getItem(int level) {
         ItemBuilder builder = ItemBuilder.getItem(plugin.getConfigManager().getFile(ConfigType.AXE).getConfig().getConfigurationSection("items."+level));
-
         builder.addNBT("AXE", level);
         builder.addNBT("Wartosc", 0);
+        builder.addNBTBoolean("Powiadomienia", false);
         return builder.build();
     }
 

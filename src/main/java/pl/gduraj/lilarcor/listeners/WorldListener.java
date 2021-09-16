@@ -9,10 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import pl.gduraj.lilarcor.Lilarcor;
 import pl.gduraj.lilarcor.config.ConfigType;
 import pl.gduraj.lilarcor.managers.ToolsManager;
-import pl.gduraj.lilarcor.utils.Message;
-import pl.gduraj.lilarcor.utils.NBTUtil;
-import pl.gduraj.lilarcor.utils.TextUtil;
-import pl.gduraj.lilarcor.utils.Util;
+import pl.gduraj.lilarcor.utils.*;
 
 import java.util.List;
 import java.util.Random;
@@ -48,18 +45,15 @@ public class WorldListener implements Listener {
                 // LEVEL UP
                 if(NBTUtil.getIntNBT(item, "Wartosc") >= getToolsManager().getTools().get(type).getQuests().get(block).getInt("value")){
                     player.getInventory().setItemInMainHand(getToolsManager().getTools().get(type).levelUP(item));
+                    player.playSound(player.getLocation(), XSound.matchXSound("ENTITY_GENERIC_EXPLODE").get().parseSound(), 10, 1);
 
                     if(NBTUtil.getIntNBT(item, type.toUpperCase()).equals(1)){ // IF LEVEL FROM TOOL 1 TO TOOL 2
-                        player.sendMessage(Message.LEVEL_UP.toString());
+                        player.sendMessage(TextUtil.color(getConfig(ConfigType.SETTINGS).getString("Message.levelUP."+type.toUpperCase())));
+                        return;
                     }
-
                 }
-
             }
-
         }
-
-
     }
 
     @EventHandler
@@ -69,13 +63,11 @@ public class WorldListener implements Listener {
         String type = getToolsManager().getNameTool(player.getInventory().getItemInMainHand());
         if(!getToolsManager().checkTool(player.getInventory().getItemInMainHand())) return;
 
-
         if(type.equals("SWORD") && !getToolsManager().getTools().get(type).getEventStatus()) return;
         if(type.equals("AXE") && !getToolsManager().getTools().get(type).getEventStatus()) return;
         if(type.equals("PICKAXE") && !getToolsManager().getTools().get(type).getEventStatus()) return;
 
         if(player.getInventory().getItemInMainHand().getType().isAir()) return;
-
 
         String block = event.getBlock().getType().toString().toUpperCase();
         double chance = getToolsManager().getTools().get(type).getClickChance();
@@ -83,6 +75,7 @@ public class WorldListener implements Listener {
         if(NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), getToolsManager().getNameTool(player.getInventory().getItemInMainHand())).equals(1)) return;
 
         if(Util.chance(chance/100)) {
+            if(NBTUtil.getBoolean(player.getInventory().getItemInMainHand(), "Powiadomienia")) return;
             if (getConfig(ConfigType.valueOf(type.toUpperCase())).getConfigurationSection("onEvent").contains(block)) {
                 List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent." + block + "." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
                 player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));

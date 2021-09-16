@@ -51,9 +51,10 @@ public class EntityListener implements Listener {
                     // LEVEL UP
                     if(NBTUtil.getIntNBT(item, "Wartosc") >= getToolsManager().getTools().get(type).getQuests().get(entity).getInt("value")){
                         player.getInventory().setItemInMainHand(getToolsManager().getTools().get(type).levelUP(item));
+                        player.playSound(player.getLocation(), XSound.matchXSound("ENTITY_GENERIC_EXPLODE").get().parseSound(), 10, 1);
 
                         if(NBTUtil.getIntNBT(item, type.toUpperCase()).equals(1)){ // IF LEVEL FROM TOOL 1 TO TOOL 2
-                            player.sendMessage(Message.LEVEL_UP.toString());
+                            player.sendMessage(TextUtil.color(getConfig(ConfigType.SETTINGS).getString("Message.levelUP."+type.toUpperCase())));
                             return;
                         }
 
@@ -71,32 +72,31 @@ public class EntityListener implements Listener {
     public void onDamege(EntityDamageByEntityEvent event) {
         if(event.getDamager() instanceof Player){
             Player player = (Player) event.getDamager();
+
+            if(player.getInventory().getItemInMainHand().getType().isAir()) return;
+            if(!this.plugin.getToolsManager().checkTool(player.getInventory().getItemInMainHand())) return;
+
             String type = getToolsManager().getNameTool(player.getInventory().getItemInMainHand());
 
             if(type.equals("SWORD") && !getToolsManager().getTools().get(type).getEventStatus()) return;
             if(type.equals("AXE") && !getToolsManager().getTools().get(type).getEventStatus()) return;
             if(type.equals("PICKAXE") && !getToolsManager().getTools().get(type).getEventStatus()) return;
 
-            if(player.getInventory().getItemInMainHand().getType().isAir()) return;
-            if(!this.plugin.getToolsManager().checkTool(player.getInventory().getItemInMainHand())) return;
-
-
             String entity = event.getEntity().getType().name().toUpperCase();
 
             double chance = getToolsManager().getTools().get(type).getClickChance();
 
             if(Util.chance(chance/100)) {
+                if(NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), getToolsManager().getNameTool(player.getInventory().getItemInMainHand())).equals(1)) return;
+                if(NBTUtil.getBoolean(player.getInventory().getItemInMainHand(), "Powiadomienia")) return;
                 if (getConfig(ConfigType.valueOf(type.toUpperCase())).getConfigurationSection("onEvent").contains(entity)) {
                     List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent." + entity + "." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
                     player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
-                    System.out.println("0 " + messageList);
                 }else if(event.getEntity() instanceof Animals){
                     List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.OTHER_PASSIVE." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
                     player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
-                    System.out.println("1 " + messageList);
                 }else if(event.getEntity() instanceof Monster){
                     List<String> messageList = getConfig(ConfigType.valueOf(type.toUpperCase())).getStringList("onEvent.OTHER_AGRESSIVE." + NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), type.toUpperCase()));
-                    System.out.println("2 " + messageList);
                     player.sendMessage(TextUtil.color(messageList.get(new Random().nextInt(messageList.size()))));
                 }
             }

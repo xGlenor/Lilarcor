@@ -45,6 +45,7 @@ public class Sword extends Tool{
         ItemBuilder builder = ItemBuilder.getItem(this.config.getConfigurationSection("items."+level));
         builder.addNBT("SWORD", level);
         builder.addNBT("Wartosc", 0);
+        builder.addNBTBoolean("Powiadomienia", false);
         return builder.build();
     }
 

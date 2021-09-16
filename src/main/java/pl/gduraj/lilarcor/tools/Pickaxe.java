@@ -46,6 +46,7 @@ public class Pickaxe extends Tool{
         ItemBuilder builder = ItemBuilder.getItem(plugin.getConfigManager().getFile(ConfigType.PICKAXE).getConfig().getConfigurationSection("items."+level));
         builder.addNBT("PICKAXE", level);
         builder.addNBT("Wartosc", 0);
+        builder.addNBTBoolean("Powiadomienia", false);
         return builder.build();
     }
 

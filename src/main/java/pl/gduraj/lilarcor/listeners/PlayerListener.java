@@ -46,14 +46,15 @@ public class PlayerListener implements Listener {
         if(event.getPlayer().getInventory().getItemInMainHand().getType().isAir()) return;
         if(!this.plugin.getToolsManager().checkTool(event.getPlayer().getInventory().getItemInMainHand())) return;
 
+
         if(NBTUtil.getNBT(event.getPlayer().getInventory().getItemInMainHand(), "Lilarcor")){
             ItemStack item = event.getPlayer().getInventory().getItemInMainHand();
             item = NBTUtil.addNBT(item, "SWORD", NBTUtil.getIntNBT(item, "Lilarcor"));
             item = NBTUtil.addNBT(item, "Wartosc", NBTUtil.getIntNBT(item, "kills"));
+            item = NBTUtil.setBoolean(item, "Powiadomienia", true);
             event.getPlayer().getInventory().setItemInMainHand(item);
             return;
         }
-
 
         if(NBTUtil.getIntNBT(event.getPlayer().getInventory().getItemInMainHand(), getToolsManager().getNameTool(event.getPlayer().getInventory().getItemInMainHand())).equals(1)) return;
 
@@ -70,6 +71,7 @@ public class PlayerListener implements Listener {
         if(event.getAction().equals(Action.LEFT_CLICK_AIR) || event.getAction().equals(Action.LEFT_CLICK_BLOCK)){
             double chance = getToolsManager().getTools().get(type).getClickChance();
             if(Util.chance(chance/100)) {
+                if(NBTUtil.getBoolean(player.getInventory().getItemInMainHand(), "Powiadomienia")) return;
                 int level = NBTUtil.getIntNBT(item, type);
                 String random = getConfig(type).getStringList("onClick."+level+".message").get(new Random().nextInt(getConfig(type).getStringList("onClick."+level+".message").size()));
                 player.sendMessage(TextUtil.color(random));

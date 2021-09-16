@@ -1,6 +1,5 @@
 package pl.gduraj.lilarcor;
 
-import com.samjakob.spigui.SpiGUI;
 import org.bukkit.plugin.java.JavaPlugin;
 import pl.gduraj.lilarcor.listeners.EntityListener;
 import pl.gduraj.lilarcor.listeners.PlayerListener;
@@ -18,7 +17,6 @@ public final class Lilarcor extends JavaPlugin {
 
     //private HashMap<String, String> playersData;
     private HashMap<String, List<String>> customMaterials;
-    private SpiGUI spiGUI;
     private CommandManager commandManager;
     private ConfigManager configManager;
     private ToolsManager toolsManager;
@@ -33,7 +31,6 @@ public final class Lilarcor extends JavaPlugin {
     public void onEnable() {
         instance = this;
         customMaterials = new HashMap<>();
-        spiGUI = new SpiGUI(this);
         //this.playersData = new HashMap<>();
         configManager = new ConfigManager();
         configManager.loadFiles(this);
@@ -70,9 +67,6 @@ public final class Lilarcor extends JavaPlugin {
         return toolsManager;
     }
 
-    public SpiGUI getSpiGUI() {
-        return spiGUI;
-    }
 
     //public HashMap<String, String> getPlayersData() {
     //    return playersData;

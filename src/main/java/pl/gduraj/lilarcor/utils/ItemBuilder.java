@@ -102,4 +102,9 @@ public class ItemBuilder {
         return this;
     }
 
+    public ItemBuilder addNBTBoolean(String key, Boolean value){
+        ITEM = NBTUtil.setBoolean(ITEM, key, value);
+        return this;
+    }
+
 }

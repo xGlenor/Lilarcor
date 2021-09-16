@@ -47,8 +47,8 @@ public class CommandManager implements CommandExecutor, TabExecutor {
                     return true;
                 }
 
-                this.plugin.getToolsManager().getTools().get(args[1]).reloadTool();
-                sender.sendMessage(Message.RELOAD_CONFIG.toString().replace("%file%", args[1]));
+                this.plugin.getToolsManager().getTools().get(args[1].toUpperCase()).reloadTool();
+                sender.sendMessage(Message.RELOAD_CONFIG.toString().replace("%plik%", args[1].toUpperCase()));
                 return true;
 
             }
@@ -70,6 +70,7 @@ public class CommandManager implements CommandExecutor, TabExecutor {
                     Player player = (Player) sender;
                     if(!player.getInventory().getItemInMainHand().getType().isAir()){
                         player.sendMessage(Message.KILL_VALUE.toString().replace("%kills%", NBTUtil.getIntNBT(player.getInventory().getItemInMainHand(), "Wartosc").toString()));
+                        return true;
                     }else {
                         player.sendMessage(Message.NO_ITEM.toString());
                         return true;

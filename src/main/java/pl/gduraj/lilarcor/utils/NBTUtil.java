@@ -22,6 +22,17 @@ public class NBTUtil {
         return nbtItem.getBoolean(value);
     }
 
+    public static ItemStack setBoolean(ItemStack itemStack, String name, Boolean value){
+        NBTItem nbtItem = new NBTItem(itemStack);
+        nbtItem.setBoolean(name, value);
+        return nbtItem.getItem();
+    }
+
+    public static boolean getBoolean(ItemStack itemStack, String name){
+        NBTItem nbtItem = new NBTItem(itemStack);
+        return nbtItem.getBoolean(name);
+    }
+
 
     public static boolean hasNBTtag(final ItemStack itemStack, final String value){
         final NBTItem nbtItem = new NBTItem(itemStack);

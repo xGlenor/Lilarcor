@@ -10,7 +10,10 @@ Message:
   killValueLilarcor: "&fLiczba punktów tego narzędzia wynosi: &a%kills%"
   offlinePlayer: "&cGracz jest offline"
   onlyPlayer: "&eTą komende może wykonać tylko gracz"
-  up1to2: '&6&lHmm… miecz stał się niezniszczalny. A może by tak przetestować go na innych potworach?'
+  levelUP:
+    AXE: '&6&lHmm… miecz stał się niezniszczalny. A może by tak przetestować go na innych potworach?'
+    PICKAXE: '&6&lHmm… miecz stał się niezniszczalny. A może by tak przetestować go na innych potworach?'
+    SWORD: '&6&lHmm… miecz stał się niezniszczalny. A może by tak przetestować go na innych potworach?'
   goodInfo: "&aMoc się wokół ciebie zbiera..."
   commandHelp:
     - "&7&m-------------&8[ &eLilarcor &8]&7&m-------------"
