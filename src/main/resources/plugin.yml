@@ -4,7 +4,7 @@ main: pl.gduraj.lilarcor.Lilarcor
 api-version: 1.16
 authors: [ gduraj ]
 description: Pradawne brodate narzędzia
-website: htttp://gduraj.pl
+website: https://gduraj.pl
 commands:
   lilarcor:
     description: "Informacje na temat pluginu"
