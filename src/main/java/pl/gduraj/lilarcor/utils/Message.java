@@ -11,6 +11,8 @@ public enum Message {
     DROP_ITEM("dropItem"),
     ADD_ITEM("addItem"),
     NO_ITEM("noItem"),
+    MESSAGE_STATUS_ON("gadulaON"),
+    MESSAGE_STATUS_OFF("gadulaOFF"),
     SET_VALUE("setValueLilarcor"),
     KILL_VALUE("killValueLilarcor"),
     OFFLINE_PLAYER("offlinePlayer"),

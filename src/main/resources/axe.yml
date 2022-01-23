@@ -1,0 +1,181 @@
+configurations:
+  clickMessage: false
+  eventMessage: true
+  eventChance: 30.0
+  clickChance: 10.0
+
+numbersQuest:
+  OAK_LOG:
+    tool: 1
+    value: 12
+    type: BREAK
+  CAVE_SPIDER:
+    tool: 2
+    value: 50
+    type: KILL
+  MELON:
+    tool: 3
+    value: 500
+    type: BREAK
+  BOOKSHELF:
+    tool: 4
+    value: 550
+    type: BREAK
+  BAT:
+    tool: 5
+    value: 10
+    type: KILL
+
+typeTool:
+  1: BREAK
+  2: KILL
+  3: BREAK
+  4: BREAK
+  5: KILL
+
+items:
+  '1':
+    material: WOOD_AXE
+    name: '&3&lDziwny topór'
+    unbreakable: false
+    lore:
+      - '&aTa siekiera jest jakaś dziwna...'
+    enchants:
+      - ARROW_DAMAGE:10
+  '2':
+    material: WOOD_AXE
+    name: '&3&lStormbreaker'
+    unbreakable: true
+    lore:
+      - '&aTa siekiera stała się niezniszczalna!'
+  '3':
+    material: STONE_AXE
+    name: '&5&lStormbreaker'
+    unbreakable: true
+    lore:
+      - '&aTa siekiera całkiem nieźle rąbie drewno!'
+    enchants:
+      - DIG_SPEED:3
+  '4':
+    material: IRON_AXE
+    name: '&d&lStormbreaker'
+    unbreakable: true
+    lore:
+      - '&aTa siekiera zaczyna wymiatać!'
+    enchants:
+      - DIG_SPEED:5
+  '5':
+    material: DIAMOND_AXE
+    name: '&4&lStormbreaker'
+    unbreakable: true
+    lore:
+      - '&aTo jeszcze chyba nie jest ostatnie słowo tej siekiery!'
+    enchants:
+      - DIG_SPEED:5
+      - SILK_TOUCH:1
+  '6':
+    material: DIAMOND_AXE
+    name: '&6&lStormbreaker'
+    unbreakable: true
+    lore:
+      - '&aI do walki, i do rąbania! Potęga!'
+    enchants:
+      - DAMAGE_ALL:5
+      - DIG_SPEED:5
+      - SILK_TOUCH:1
+
+onClick: []
+
+onEvent:
+  CUSTOM1: # DREWNO
+    2:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+    3:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+      - 'Rach, ciach! I po drzewku!'
+    4:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+      - 'Rach, ciach! I po drzewku!'
+      - 'Ale bym sobie ściął sosenkę...'
+    5:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+      - 'Rach, ciach! I po drzewku!'
+      - 'Ale bym sobie ściął sosenkę...'
+    6:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+      - 'Rach, ciach! I po drzewku!'
+      - 'Ale bym sobie ściął sosenkę...'
+  CUSTOM2: ## NIEDREWNO
+    2:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+    3:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+      - 'Wiesz do czego jestem stworzony?!'
+    4:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+      - 'Wiesz do czego jestem stworzony?!'
+      - 'Nie dogadamy się...'
+    5:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+      - 'Wiesz do czego jestem stworzony?!'
+      - 'Nie dogadamy się...'
+    6:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+      - 'Wiesz do czego jestem stworzony?!'
+      - 'Nie dogadamy się...'
+  OTHER_PASSIVE: # DREWNO
+    2:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+    3:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+      - 'Rach, ciach! I po drzewku!'
+    4:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+      - 'Rach, ciach! I po drzewku!'
+      - 'Ale bym sobie ściął sosenkę...'
+    5:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+      - 'Rach, ciach! I po drzewku!'
+      - 'Ale bym sobie ściął sosenkę...'
+    6:
+      - 'Chop! Chop!'
+      - 'Gotowy do rąbania!'
+      - 'Rach, ciach! I po drzewku!'
+      - 'Ale bym sobie ściął sosenkę...'
+  OTHER_AGRESSIVE: ## NIEDREWNO
+    2:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+    3:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+      - 'Wiesz do czego jestem stworzony?!'
+    4:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+      - 'Wiesz do czego jestem stworzony?!'
+      - 'Nie dogadamy się...'
+    5:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+      - 'Wiesz do czego jestem stworzony?!'
+      - 'Nie dogadamy się...'
+    6:
+      - 'To jest porąbane!'
+      - 'Proszę, nie katuj mnie!'
+      - 'Wiesz do czego jestem stworzony?!'
+      - 'Nie dogadamy się...'

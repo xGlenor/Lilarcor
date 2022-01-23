@@ -1,0 +1,181 @@
+configurations:
+  clickMessage: false
+  eventMessage: true
+  eventChance: 30.0
+  clickChance: 10.0
+
+numbersQuest:
+  DIORITE:
+    tool: 1
+    value: 12
+    type: BREAK
+  COAL_ORE:
+    tool: 2
+    value: 50
+    type: BREAK
+  NETHER_QUARTZ_ORE:
+    tool: 3
+    value: 200
+    type: BREAK
+  REDSTONE_ORE:
+    tool: 4
+    value: 500
+    type: BREAK
+  SPAWNER:
+    tool: 5
+    value: 2
+    type: BREAK
+
+typeTool:
+  1: BREAK
+  2: BREAK
+  3: BREAK
+  4: BREAK
+  5: BREAK
+
+items:
+  '1':
+    material: WOOD_PICKAXE
+    name: '&3&lDziwny kilof'
+    unbreakable: false
+    lore:
+      - '&aTen kilof jest jakiś dziwny...'
+    enchants:
+      - ARROW_DAMAGE:10
+  '2':
+    material: WOOD_PICKAXE
+    name: '&3&lKilof Obfitości'
+    unbreakable: true
+    lore:
+      - '&aTen kilof stał się niezniszczalny!'
+  '3':
+    material: STONE_PICKAXE
+    name: '&5&lKilof Obfitości'
+    unbreakable: true
+    lore:
+      - '&aTen kilof całkiem nieźle kopie!'
+    enchants:
+      - DIG_SPEED:3
+  '4':
+    material: IRON_PICKAXE
+    name: '&d&lKilof Obfitości'
+    unbreakable: true
+    lore:
+      - '&aTen kilof zaczyna porządnie działać!'
+    enchants:
+      - DIG_SPEED:5
+  '5':
+    material: DIAMOND_PICKAXE
+    name: '&4&lKilof Obfitości'
+    unbreakable: true
+    lore:
+      - '&aCzy ten kilof może być jeszcze lepszy?'
+    enchants:
+      - DIG_SPEED:5
+      - LOOT_BONUS_BLOCKS:3
+  '6':
+    material: DIAMOND_PICKAXE
+    name: '&6&lKilof Obfitości'
+    unbreakable: true
+    lore:
+      - '&aTen kilof to potęga!'
+      - '&aTrzymając ten kilof nie tracisz głodu'
+    enchants:
+      - DIG_SPEED:5
+      - LOOT_BONUS_BLOCKS:3
+
+onClick: []
+
+onEvent:
+  CUSTOM1: ## RUDY
+    2:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+    3:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+      - 'Rozwalać! Rozwalać!'
+    4:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+      - 'Rozwalać! Rozwalać!'
+      - 'Co Ty byś beze mnie wykopał?'
+    5:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+      - 'Rozwalać! Rozwalać!'
+      - 'Co Ty byś beze mnie wykopał?'
+    6:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+      - 'Rozwalać! Rozwalać!'
+      - 'Co Ty byś beze mnie wykopał?'
+  CUSTOM2: ## NIERUDY
+    2:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+    3:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+      - 'Proszę! Kamień albo ruda!'
+    4:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+      - 'Proszę! Kamień albo ruda!'
+      - 'Nie jestem jakimś Maminsynkiem!'
+    5:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+      - 'Proszę! Kamień albo ruda!'
+      - 'Nie jestem jakimś Maminsynkiem!'
+    6:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+      - 'Proszę! Kamień albo ruda!'
+      - 'Nie jestem jakimś Maminsynkiem!'
+  OTHER_PASSIVE: ## RUDY
+    2:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+    3:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+      - 'Rozwalać! Rozwalać!'
+    4:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+      - 'Rozwalać! Rozwalać!'
+      - 'Co Ty byś beze mnie wykopał?'
+    5:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+      - 'Rozwalać! Rozwalać!'
+      - 'Co Ty byś beze mnie wykopał?'
+    6:
+      - 'Wbij mnie głębiej!'
+      - 'Diggy, diggy hole!'
+      - 'Rozwalać! Rozwalać!'
+      - 'Co Ty byś beze mnie wykopał?'
+  OTHER_AGRESSIVE: ## NIERUDY
+    2:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+    3:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+      - 'Proszę! Kamień albo ruda!'
+    4:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+      - 'Proszę! Kamień albo ruda!'
+      - 'Nie jestem jakimś Maminsynkiem!'
+    5:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+      - 'Proszę! Kamień albo ruda!'
+      - 'Nie jestem jakimś Maminsynkiem!'
+    6:
+      - 'Ale Ty wiesz, że mną się kopie?'
+      - 'Naprawdę muszę Ci tłumaczyć?'
+      - 'Proszę! Kamień albo ruda!'
+      - 'Nie jestem jakimś Maminsynkiem!'

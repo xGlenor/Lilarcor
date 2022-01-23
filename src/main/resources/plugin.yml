@@ -9,7 +9,7 @@ commands:
   lilarcor:
     description: "Informacje na temat pluginu"
     usage: /<command>
-  powiadomienia:
+  gadula:
     description: "Panel powiadomień"
     usage: /<command>
 permissions:

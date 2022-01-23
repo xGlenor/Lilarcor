@@ -1,0 +1,639 @@
+configurations:
+  clickMessage: true
+  eventMessage: true
+  eventChance: 30.0
+  clickChance: 10.0
+
+numbersQuest:
+  CREEPER:
+    tool: 1
+    value: 10
+    type: KILL
+  ZOMBIE:
+    tool: 2
+    value: 100
+    type: KILL
+  ENDERMAN:
+    tool: 3
+    value: 500
+    type: KILL
+  ZOMBIFIED_PIGLIN:
+    tool: 4
+    value: 1000
+    type: KILL
+  PLAYER:
+    tool: 5
+    value: 1000
+    type: KILL
+
+typeTool:
+  1: KILL
+  2: KILL
+  3: KILL
+  4: KILL
+  5: KILL
+
+items:
+  '1':
+    material: WOOD_SWORD
+    name: '&3&lDziwny miecz'
+    unbreakable: false
+    lore:
+      - '&aW tym mieczu drzemie pradawna moc.'
+    enchants:
+      - ARROW_DAMAGE:10
+  '2':
+    material: WOOD_SWORD
+    name: '&3&lLilarcor'
+    unbreakable: true
+    lore:
+      - '&aTen miecz… żyje?'
+    enchants:
+      - DAMAGE_ALL:1
+  '3':
+    material: IRON_SWORD
+    name: '&5&lLilarcor'
+    unbreakable: true
+    lore:
+      - '&aTen miecz żyje i się kształci!'
+    enchants:
+      - DAMAGE_ALL:3
+  '4':
+    material: DIAMOND_SWORD
+    name: '&d&lLilarcor'
+    unbreakable: true
+    lore:
+      - '&aTen miecz żyje, kształci się i stał się potężny!'
+    enchants:
+      - DAMAGE_ALL:5
+  '5':
+    material: DIAMOND_SWORD
+    name: '&4&lLilarcor'
+    unbreakable: true
+    lore:
+      - '&aTen miecz żyje, kształci się, jest potężny,'
+      - '&aale wygląda na to, że może być jeszcze potężniejszy!'
+    enchants:
+      - DAMAGE_ALL:5
+      - fire_aspect:2
+  '6':
+    material: DIAMOND_SWORD
+    name: '&6&lLilarcor'
+    unbreakable: true
+    lore:
+      - '&aTen miecz… to po prostu Lilarcor!'
+    enchants:
+      - DAMAGE_ALL:5
+      - DAMAGE_UNDEAD:5
+      - fire_aspect:2
+      - LOOT_BONUS_MOBS:3
+      - DAMAGE_ARTHROPODS:5
+
+onClick:
+  2:
+    sound: ENTITY_VILLAGER_AMBIENT
+    message:
+      - '&e[&3Lilarcor&e]&7: Nie moglibyśmy pozabijać kilku potworów?'
+      - '&e[&3Lilarcor&e]&7: Twój styl bycia jest tak ostry, jak moja lewa strona.'
+      - '&e[&3Lilarcor&e]&7: Conan Barbarzyńca to z ciebie nie będzie, co?'
+      - '&e[&3Lilarcor&e]&7: Do boju!'
+      - '&e[&3Lilarcor&e]&7: Pocięliśmy! Powietrze!'
+  3:
+    sound: ENTITY_VILLAGER_AMBIENT
+    message:
+      - '&e[&5Lilarcor&e]&7: Nie moglibyśmy pozabijać kilku potworów?'
+      - '&e[&5Lilarcor&e]&7: Twój styl bycia jest tak ostry, jak moja lewa strona.'
+      - '&e[&5Lilarcor&e]&7: Conan Barbarzyńca to z ciebie nie będzie, co?'
+      - '&e[&5Lilarcor&e]&7: Do boju!'
+      - '&e[&5Lilarcor&e]&7: Pocięliśmy! Powietrze!'
+      - '&e[&5Lilarcor&e]&7: Taki młody, a już problemy z trafianiem?!'
+  4:
+    sound: ENTITY_VILLAGER_AMBIENT
+    message:
+      - '&e[&dLilarcor&e]&7: Nie moglibyśmy pozabijać kilku potworów?'
+      - '&e[&dLilarcor&e]&7: Twój styl bycia jest tak ostry, jak moja lewa strona.'
+      - '&e[&dLilarcor&e]&7: Conan Barbarzyńca to z ciebie nie będzie, co?'
+      - '&e[&dLilarcor&e]&7: Do boju!'
+      - '&e[&dLilarcor&e]&7: Pocięliśmy! Powietrze!'
+      - '&e[&dLilarcor&e]&7: Taki młody, a już problemy z trafianiem?!'
+      - '&e[&dLilarcor&e]&7: Zostaw powietrze w spokoju!'
+  5:
+    sound: ENTITY_VILLAGER_AMBIENT
+    message:
+      - '&e[&4Lilarcor&e]&7: Nie moglibyśmy pozabijać kilku potworów?'
+      - '&e[&4Lilarcor&e]&7: Twój styl bycia jest tak ostry, jak moja lewa strona.'
+      - '&e[&4Lilarcor&e]&7: Conan Barbarzyńca to z ciebie nie będzie, co?'
+      - '&e[&4Lilarcor&e]&7: Do boju!'
+      - '&e[&4Lilarcor&e]&7: Pocięliśmy! Powietrze!'
+      - '&e[&4Lilarcor&e]&7: Taki młody, a już problemy z trafianiem?!'
+      - '&e[&4Lilarcor&e]&7: Zostaw powietrze w spokoju!'
+      - '&e[&4Lilarcor&e]&7: Mógłbyś trzymać mnie nieco delikatniej?'
+  6:
+    sound: ENTITY_VILLAGER_AMBIENT
+    message:
+      - '&e[&6Lilarcor&e]&7: Nie moglibyśmy pozabijać kilku potworów?'
+      - '&e[&6Lilarcor&e]&7: Twój styl bycia jest tak ostry, jak moja lewa strona.'
+      - '&e[&6Lilarcor&e]&7: Conan Barbarzyńca to z ciebie nie będzie, co?'
+      - '&e[&6Lilarcor&e]&7: Do boju!'
+      - '&e[&6Lilarcor&e]&7: Pocięliśmy! Powietrze!'
+      - '&e[&6Lilarcor&e]&7: Taki młody, a już problemy z trafianiem?!'
+      - '&e[&6Lilarcor&e]&7: Zostaw powietrze w spokoju!'
+      - '&e[&6Lilarcor&e]&7: Mógłbyś trzymać mnie nieco delikatniej?'
+
+onEvent:
+  CHICKEN:
+    2:
+      - '&e[&3Lilarcor&e]&7: Ty brutalu!'
+      - '&e[&3Lilarcor&e]&7: No i co ta biedna kurka Ci zrobiła?!'
+      - '&e[&3Lilarcor&e]&7: Zapowiada się rosół.'
+      - '&e[&3Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&3Lilarcor&e]&7: Dlaczego Ty to robisz?!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Ty brutalu!'
+      - '&e[&5Lilarcor&e]&7: No i co ta biedna kurka Ci zrobiła?!'
+      - '&e[&5Lilarcor&e]&7: Zapowiada się rosół.'
+      - '&e[&5Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&5Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&5Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+    4:
+      - '&e[&dLilarcor&e]&7: Ty brutalu!'
+      - '&e[&dLilarcor&e]&7: No i co ta biedna kurka Ci zrobiła?!'
+      - '&e[&dLilarcor&e]&7: Zapowiada się rosół.'
+      - '&e[&dLilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&dLilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&dLilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&dLilarcor&e]&7: Na to się nie pisałem.'
+    5:
+      - '&e[&4Lilarcor&e]&7: Ty brutalu!'
+      - '&e[&4Lilarcor&e]&7: No i co ta biedna kurka Ci zrobiła?!'
+      - '&e[&4Lilarcor&e]&7: Zapowiada się rosół.'
+      - '&e[&4Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&4Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&4Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&4Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&4Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+    6:
+      - '&e[&6Lilarcor&e]&7: Ty brutalu!'
+      - '&e[&6Lilarcor&e]&7: No i co ta biedna kurka Ci zrobiła?!'
+      - '&e[&6Lilarcor&e]&7: Zapowiada się rosół.'
+      - '&e[&6Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&6Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&6Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&6Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&6Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+  HORSE:
+    2:
+      - '&e[&3Lilarcor&e]&7: Czy Ty naprawdę nie rozumiesz, że to co robisz nie ma sensu?'
+      - '&e[&3Lilarcor&e]&7: Przecież to koń jest!'
+      - '&e[&3Lilarcor&e]&7: Ostrze mi opada jak to widzę.'
+      - '&e[&3Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&3Lilarcor&e]&7: Dlaczego Ty to robisz?!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Czy Ty naprawdę nie rozumiesz, że to co robisz nie ma sensu?'
+      - '&e[&5Lilarcor&e]&7: Przecież to koń jest!'
+      - '&e[&5Lilarcor&e]&7: Ostrze mi opada jak to widzę.'
+      - '&e[&5Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&5Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&5Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+    4:
+      - '&e[&dLilarcor&e]&7: Czy Ty naprawdę nie rozumiesz, że to co robisz nie ma sensu?'
+      - '&e[&dLilarcor&e]&7: Przecież to koń jest!'
+      - '&e[&dLilarcor&e]&7: Ostrze mi opada jak to widzę.'
+      - '&e[&dLilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&dLilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&dLilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&dLilarcor&e]&7: Na to się nie pisałem.'
+    5:
+      - '&e[&4Lilarcor&e]&7: Czy Ty naprawdę nie rozumiesz, że to co robisz nie ma sensu?'
+      - '&e[&4Lilarcor&e]&7: Przecież to koń jest!'
+      - '&e[&4Lilarcor&e]&7: Ostrze mi opada jak to widzę.'
+      - '&e[&4Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&4Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&4Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&4Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&4Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+    6:
+      - '&e[&6Lilarcor&e]&7: Czy Ty naprawdę nie rozumiesz, że to co robisz nie ma sensu?'
+      - '&e[&6Lilarcor&e]&7: Przecież to koń jest!'
+      - '&e[&6Lilarcor&e]&7: Ostrze mi opada jak to widzę.'
+      - '&e[&6Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&6Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&6Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&6Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&6Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+  COW:
+    2:
+      - '&e[&3Lilarcor&e]&7: Zrobisz mi ze skóry nową rękojeść?'
+      - '&e[&3Lilarcor&e]&7: Dlaczego nie lubimy tej krowy?'
+      - '&e[&3Lilarcor&e]&7: Mam wezwać obrońców praw zwierząt?!'
+      - '&e[&3Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&3Lilarcor&e]&7: Dlaczego Ty to robisz?!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Zrobisz mi ze skóry nową rękojeść?'
+      - '&e[&5Lilarcor&e]&7: Dlaczego nie lubimy tej krowy?'
+      - '&e[&5Lilarcor&e]&7: Mam wezwać obrońców praw zwierząt?!'
+      - '&e[&5Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&5Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&5Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+    4:
+      - '&e[&dLilarcor&e]&7: Zrobisz mi ze skóry nową rękojeść?'
+      - '&e[&dLilarcor&e]&7: Dlaczego nie lubimy tej krowy?'
+      - '&e[&dLilarcor&e]&7: Mam wezwać obrońców praw zwierząt?!'
+      - '&e[&dLilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&dLilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&dLilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&dLilarcor&e]&7: Na to się nie pisałem.'
+    5:
+      - '&e[&4Lilarcor&e]&7: Zrobisz mi ze skóry nową rękojeść?'
+      - '&e[&4Lilarcor&e]&7: Dlaczego nie lubimy tej krowy?'
+      - '&e[&4Lilarcor&e]&7: Mam wezwać obrońców praw zwierząt?!'
+      - '&e[&4Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&4Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&4Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&4Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&4Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+    6:
+      - '&e[&6Lilarcor&e]&7: Zrobisz mi ze skóry nową rękojeść?'
+      - '&e[&6Lilarcor&e]&7: Dlaczego nie lubimy tej krowy?'
+      - '&e[&6Lilarcor&e]&7: Mam wezwać obrońców praw zwierząt?!'
+      - '&e[&6Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&6Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&6Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&6Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&6Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+  SHEEP:
+    2:
+      - '&e[&3Lilarcor&e]&7: Oby była sklonowana.'
+      - '&e[&3Lilarcor&e]&7: Przecież ona jest taka mięciutka!'
+      - '&e[&3Lilarcor&e]&7: Jak wykorzystasz tę wełnę?'
+      - '&e[&3Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&3Lilarcor&e]&7: Dlaczego Ty to robisz?!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Oby była sklonowana.'
+      - '&e[&5Lilarcor&e]&7: Przecież ona jest taka mięciutka!'
+      - '&e[&5Lilarcor&e]&7: Jak wykorzystasz tę wełnę?'
+      - '&e[&5Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&5Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&5Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+    4:
+      - '&e[&dLilarcor&e]&7: Oby była sklonowana.'
+      - '&e[&dLilarcor&e]&7: Przecież ona jest taka mięciutka!'
+      - '&e[&dLilarcor&e]&7: Jak wykorzystasz tę wełnę?'
+      - '&e[&dLilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&dLilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&dLilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&dLilarcor&e]&7: Na to się nie pisałem.'
+    5:
+      - '&e[&4Lilarcor&e]&7: Oby była sklonowana.'
+      - '&e[&4Lilarcor&e]&7: Przecież ona jest taka mięciutka!'
+      - '&e[&4Lilarcor&e]&7: Jak wykorzystasz tę wełnę?'
+      - '&e[&4Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&4Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&4Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&4Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&4Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+    6:
+      - '&e[&6Lilarcor&e]&7: Oby była sklonowana.'
+      - '&e[&6Lilarcor&e]&7: Przecież ona jest taka mięciutka!'
+      - '&e[&6Lilarcor&e]&7: Jak wykorzystasz tę wełnę?'
+      - '&e[&6Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&6Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&6Lilarcor&e]&7: Dlaczego Ty to robisz?! Oszalałeś?!'
+      - '&e[&6Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&6Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+  CAVE_SPIDER:
+    2:
+      - '&e[&3Lilarcor&e]&7: Zaraz skrócę cię o kilka nóżek!'
+      - '&e[&3Lilarcor&e]&7: Wspieramy wszystkich arachnofobów!'
+      - '&e[&3Lilarcor&e]&7: Do boju! Jeszcze nie skończyłem!'
+      - '&e[&3Lilarcor&e]&7: Niezniszczalny słyszysz?!'
+      - '&e[&3Lilarcor&e]&7: Zaraz potnę się z radości!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Zaraz skrócę cię o kilka nóżek!'
+      - '&e[&5Lilarcor&e]&7: Wspieramy wszystkich arachnofobów!'
+      - '&e[&5Lilarcor&e]&7: Do boju! Jeszcze nie skończyłem!'
+      - '&e[&5Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&5Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&5Lilarcor&e]&7: Zaraz potnę się z radości!'
+    4:
+      - '&e[&dLilarcor&e]&7: Zaraz skrócę cię o kilka nóżek!'
+      - '&e[&dLilarcor&e]&7: Wspieramy wszystkich arachnofobów!'
+      - '&e[&dLilarcor&e]&7: Do boju! Jeszcze nie skończyłem!'
+      - '&e[&dLilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&dLilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&dLilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&dLilarcor&e]&7: Oj… to zostawi ślad.'
+    5:
+      - '&e[&4Lilarcor&e]&7: Zaraz skrócę cię o kilka nóżek!'
+      - '&e[&4Lilarcor&e]&7: Wspieramy wszystkich arachnofobów!'
+      - '&e[&4Lilarcor&e]&7: Do boju! Jeszcze nie skończyłem!'
+      - '&e[&4Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&4Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&4Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&4Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&4Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+    6:
+      - '&e[&6Lilarcor&e]&7: Zaraz skrócę cię o kilka nóżek!'
+      - '&e[&6Lilarcor&e]&7: Wspieramy wszystkich arachnofobów!'
+      - '&e[&6Lilarcor&e]&7: Do boju! Jeszcze nie skończyłem!'
+      - '&e[&6Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&6Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&6Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&6Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&6Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+  PIGMAN:
+    2:
+      - '&e[&3Lilarcor&e]&7: Rączki do góry! Który chce zginąć?!'
+      - '&e[&3Lilarcor&e]&7: W co Ty właśnie mną trafiłeś? To świnia czy zombie?!'
+      - '&e[&3Lilarcor&e]&7: Zatańczmy!'
+      - '&e[&3Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&3Lilarcor&e]&7: Zaraz potnę się z radości!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Rączki do góry! Który chce zginąć?!'
+      - '&e[&5Lilarcor&e]&7: W co Ty właśnie mną trafiłeś? To świnia czy zombie?!'
+      - '&e[&5Lilarcor&e]&7: Zatańczmy!'
+      - '&e[&5Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&5Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&5Lilarcor&e]&7: Zaraz potnę się z radości!'
+    4:
+      - '&e[&dLilarcor&e]&7: Rączki do góry! Który chce zginąć?!'
+      - '&e[&dLilarcor&e]&7: W co Ty właśnie mną trafiłeś? To świnia czy zombie?!'
+      - '&e[&dLilarcor&e]&7: Zatańczmy!'
+      - '&e[&dLilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&dLilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&dLilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&dLilarcor&e]&7: Oj… to zostawi ślad.'
+    5:
+      - '&e[&4Lilarcor&e]&7: Rączki do góry! Który chce zginąć?!'
+      - '&e[&4Lilarcor&e]&7: W co Ty właśnie mną trafiłeś? To świnia czy zombie?!'
+      - '&e[&4Lilarcor&e]&7: Zatańczmy!'
+      - '&e[&4Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&4Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&4Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&4Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&4Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+    6:
+      - '&e[&6Lilarcor&e]&7: Rączki do góry! Który chce zginąć?!'
+      - '&e[&6Lilarcor&e]&7: W co Ty właśnie mną trafiłeś? To świnia czy zombie?!'
+      - '&e[&6Lilarcor&e]&7: Zatańczmy!'
+      - '&e[&6Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&6Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&6Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&6Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&6Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+  CREEPER:
+    2:
+      - '&e[&3Lilarcor&e]&7: Zabij to zanim zniesie jajo!'
+      - '&e[&3Lilarcor&e]&7: Tsss! Wielkie rzeczy! Też tak potrafię! Tsssss!'
+      - '&e[&3Lilarcor&e]&7: Zaraz wybuchnę z radości!'
+      - '&e[&3Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&3Lilarcor&e]&7: Zaraz potnę się z radości!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Zabij to zanim zniesie jajo!'
+      - '&e[&5Lilarcor&e]&7: Tsss! Wielkie rzeczy! Też tak potrafię! Tsssss!'
+      - '&e[&5Lilarcor&e]&7: Zaraz wybuchnę z radości!'
+      - '&e[&5Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&5Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&5Lilarcor&e]&7: Zaraz potnę się z radości!'
+    4:
+      - '&e[&dLilarcor&e]&7: Zabij to zanim zniesie jajo!'
+      - '&e[&dLilarcor&e]&7: Tsss! Wielkie rzeczy! Też tak potrafię! Tsssss!'
+      - '&e[&dLilarcor&e]&7: Zaraz wybuchnę z radości!'
+      - '&e[&dLilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&dLilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&dLilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&dLilarcor&e]&7: Oj… to zostawi ślad.'
+    5:
+      - '&e[&4Lilarcor&e]&7: Zabij to zanim zniesie jajo!'
+      - '&e[&4Lilarcor&e]&7: Tsss! Wielkie rzeczy! Też tak potrafię! Tsssss!'
+      - '&e[&4Lilarcor&e]&7: Zaraz wybuchnę z radości!'
+      - '&e[&4Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&4Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&4Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&4Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&4Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+    6:
+      - '&e[&6Lilarcor&e]&7: Zabij to zanim zniesie jajo!'
+      - '&e[&6Lilarcor&e]&7: Tsss! Wielkie rzeczy! Też tak potrafię! Tsssss!'
+      - '&e[&6Lilarcor&e]&7: Zaraz wybuchnę z radości!'
+      - '&e[&6Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&6Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&6Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&6Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&6Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+  ENDERMAN:
+    2:
+      - '&e[&3Lilarcor&e]&7: Ten gość wygląda podejrzanie…'
+      - '&e[&3Lilarcor&e]&7: Gdzie on zniknął?!'
+      - '&e[&3Lilarcor&e]&7: Zabij to! Zabij! Zanim TO zabije Ciebie!'
+      - '&e[&3Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&3Lilarcor&e]&7: Zaraz potnę się z radości!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Ten gość wygląda podejrzanie…'
+      - '&e[&5Lilarcor&e]&7: Gdzie on zniknął?!'
+      - '&e[&5Lilarcor&e]&7: Zabij to! Zabij! Zanim TO zabije Ciebie!'
+      - '&e[&5Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&5Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&5Lilarcor&e]&7: Zaraz potnę się z radości!'
+    4:
+      - '&e[&dLilarcor&e]&7: Ten gość wygląda podejrzanie…'
+      - '&e[&dLilarcor&e]&7: Gdzie on zniknął?!'
+      - '&e[&dLilarcor&e]&7: Zabij to! Zabij! Zanim TO zabije Ciebie!'
+      - '&e[&dLilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&dLilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&dLilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&dLilarcor&e]&7: Oj… to zostawi ślad.'
+    5:
+      - '&e[&4Lilarcor&e]&7: Ten gość wygląda podejrzanie…'
+      - '&e[&4Lilarcor&e]&7: Gdzie on zniknął?!'
+      - '&e[&4Lilarcor&e]&7: Zabij to! Zabij! Zanim TO zabije Ciebie!'
+      - '&e[&4Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&4Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&4Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&4Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&4Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+    6:
+      - '&e[&6Lilarcor&e]&7: Ten gość wygląda podejrzanie…'
+      - '&e[&6Lilarcor&e]&7: Gdzie on zniknął?!'
+      - '&e[&6Lilarcor&e]&7: Zabij to! Zabij! Zanim TO zabije Ciebie!'
+      - '&e[&6Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&6Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&6Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&6Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&6Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+  SKELETON:
+    2:
+      - '&e[&3Lilarcor&e]&7: To rentgen?!'
+      - '&e[&3Lilarcor&e]&7: Twoje kości zostaną rzucone!'
+      - '&e[&3Lilarcor&e]&7: Zabij go, ale tak, żeby już faktycznie nie żył!'
+      - '&e[&3Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&3Lilarcor&e]&7: Zaraz potnę się z radości!'
+    3:
+      - '&e[&5Lilarcor&e]&7: To rentgen?!'
+      - '&e[&5Lilarcor&e]&7: Twoje kości zostaną rzucone!'
+      - '&e[&5Lilarcor&e]&7: Zabij go, ale tak, żeby już faktycznie nie żył!'
+      - '&e[&5Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&5Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&5Lilarcor&e]&7: Zaraz potnę się z radości!'
+    4:
+      - '&e[&dLilarcor&e]&7: To rentgen?!'
+      - '&e[&dLilarcor&e]&7: Twoje kości zostaną rzucone!'
+      - '&e[&dLilarcor&e]&7: Zabij go, ale tak, żeby już faktycznie nie żył!'
+      - '&e[&dLilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&dLilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&dLilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&dLilarcor&e]&7: Oj… to zostawi ślad.'
+    5:
+      - '&e[&4Lilarcor&e]&7: To rentgen?!'
+      - '&e[&4Lilarcor&e]&7: Twoje kości zostaną rzucone!'
+      - '&e[&4Lilarcor&e]&7: Zabij go, ale tak, żeby już faktycznie nie żył!'
+      - '&e[&4Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&4Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&4Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&4Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&4Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+    6:
+      - '&e[&6Lilarcor&e]&7: To rentgen?!'
+      - '&e[&6Lilarcor&e]&7: Twoje kości zostaną rzucone!'
+      - '&e[&6Lilarcor&e]&7: Zabij go, ale tak, żeby już faktycznie nie żył!'
+      - '&e[&6Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&6Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&6Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&6Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&6Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+  ZOMBIE:
+    2:
+      - '&e[&3Lilarcor&e]&7: Sprawdźmy co jest w środku!'
+      - '&e[&3Lilarcor&e]&7: Jak ja nie cierpię nieumarłych!'
+      - '&e[&3Lilarcor&e]&7: Zzieleniał z zazdrości!'
+      - '&e[&3Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&3Lilarcor&e]&7: Zaraz potnę się z radości!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Sprawdźmy co jest w środku!'
+      - '&e[&5Lilarcor&e]&7: Jak ja nie cierpię nieumarłych!'
+      - '&e[&5Lilarcor&e]&7: Zzieleniał z zazdrości!'
+      - '&e[&5Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&5Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&5Lilarcor&e]&7: Zaraz potnę się z radości!'
+    4:
+      - '&e[&dLilarcor&e]&7: Sprawdźmy co jest w środku!'
+      - '&e[&dLilarcor&e]&7: Jak ja nie cierpię nieumarłych!'
+      - '&e[&dLilarcor&e]&7: Zzieleniał z zazdrości!'
+      - '&e[&dLilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&dLilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&dLilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&dLilarcor&e]&7: Oj… to zostawi ślad.'
+    5:
+      - '&e[&4Lilarcor&e]&7: Sprawdźmy co jest w środku!'
+      - '&e[&4Lilarcor&e]&7: Jak ja nie cierpię nieumarłych!'
+      - '&e[&4Lilarcor&e]&7: Zzieleniał z zazdrości!'
+      - '&e[&4Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&4Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&4Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&4Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&4Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+    6:
+      - '&e[&6Lilarcor&e]&7: Sprawdźmy co jest w środku!'
+      - '&e[&6Lilarcor&e]&7: Jak ja nie cierpię nieumarłych!'
+      - '&e[&6Lilarcor&e]&7: Zzieleniał z zazdrości!'
+      - '&e[&6Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&6Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&6Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&6Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&6Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+  OTHER_PASSIVE:
+    2:
+      - '&e[&3Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&3Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&3Lilarcor&e]&7: Dlaczego Ty to robisz?!'
+      - '&e[&3Lilarcor&e]&7: Oszalałeś?!'
+      - '&e[&3Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&3Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+    3:
+      - '&e[&5Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&5Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&5Lilarcor&e]&7: Dlaczego Ty to robisz?!'
+      - '&e[&5Lilarcor&e]&7: Oszalałeś?!'
+      - '&e[&5Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&5Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+    4:
+      - '&e[&dLilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&dLilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&dLilarcor&e]&7: Dlaczego Ty to robisz?!'
+      - '&e[&dLilarcor&e]&7: Oszalałeś?!'
+      - '&e[&dLilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&dLilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+    5:
+      - '&e[&4Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&4Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&4Lilarcor&e]&7: Dlaczego Ty to robisz?!'
+      - '&e[&4Lilarcor&e]&7: Oszalałeś?!'
+      - '&e[&4Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&4Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+    6:
+      - '&e[&6Lilarcor&e]&7: Mam nadzieję, że masz dobry powód!'
+      - '&e[&6Lilarcor&e]&7: Jesteś nieczuły!'
+      - '&e[&6Lilarcor&e]&7: Dlaczego Ty to robisz?!'
+      - '&e[&6Lilarcor&e]&7: Oszalałeś?!'
+      - '&e[&6Lilarcor&e]&7: Na to się nie pisałem.'
+      - '&e[&6Lilarcor&e]&7: Czy Ty masz w sobie choć odrobinę współczucia?'
+  OTHER_AGRESSIVE:
+    2:
+      - '&e[&3Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&3Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&3Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&3Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&3Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+    3:
+      - '&e[&5Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&5Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&5Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&5Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&5Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+    4:
+      - '&e[&dLilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&dLilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&dLilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&dLilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&dLilarcor&e]&7: Ty wyceluj, ja potnę!'
+    5:
+      - '&e[&4Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&4Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&4Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&4Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&4Lilarcor&e]&7: Ty wyceluj, ja potnę!'
+    6:
+      - '&e[&6Lilarcor&e]&7: Jestem najlepszy w tym co robię! A to co robię nie jest
+      zbyt piękne!'
+      - '&e[&6Lilarcor&e]&7: Jestem niezniszczalny! Niezniszczalny słyszysz?!'
+      - '&e[&6Lilarcor&e]&7: Zaraz potnę się z radości!'
+      - '&e[&6Lilarcor&e]&7: Oj… to zostawi ślad.'
+      - '&e[&6Lilarcor&e]&7: Ty wyceluj, ja potnę!'

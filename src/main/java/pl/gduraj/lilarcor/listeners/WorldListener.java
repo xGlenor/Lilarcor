@@ -3,6 +3,7 @@ package pl.gduraj.lilarcor.listeners;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
@@ -21,8 +22,9 @@ public class WorldListener implements Listener {
         this.plugin = Lilarcor.getInstance();
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onBreak(BlockBreakEvent event){
+
         if(event.isCancelled()) return;
 
         if(event.getPlayer().getInventory().getItemInMainHand().getType().isAir()) return;
@@ -56,8 +58,9 @@ public class WorldListener implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void onEventBreak(BlockBreakEvent event) {
+
         Player player = event.getPlayer();
         if(player.getInventory().getItemInMainHand().getType().isAir()) return;
         String type = getToolsManager().getNameTool(player.getInventory().getItemInMainHand());
